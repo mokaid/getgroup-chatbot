@@ -1,120 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Flowise Chatbot Embed</title>
-</head>
-<body>
-  <h1>Welcome to My Flowise Chatbot Page</h1>
-  <p>This page includes an embedded Flowise chatbot.</p>
 
-  <!-- Flowise Embed Script -->
-  <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "54331d31-13be-4648-83b2-4f2825104a90",
-        apiHost: "https://flowise-0okh.onrender.com",
-        chatflowConfig: {
-            /* Chatflow Config */
-        },
-        observersConfig: {
-            /* Observers Config */
-        },
-        theme: {
-            button: {
-                backgroundColor: '#3B81F6',
-                right: 20,
-                bottom: 20,
-                size: 48,
-                dragAndDrop: true,
-                iconColor: 'white',
-                customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                autoWindowOpen: {
-                    autoOpen: true,
-                    openDelay: 2,
-                    autoOpenOnMobile: false
-                }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GET Group AI Chatbot</title>
+    <style>
+        body {
+            background-image: url('pic.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        p {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Flowise Embed Script -->
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "54331d31-13be-4648-83b2-4f2825104a90",
+            apiHost: "https://flowise-0okh.onrender.com",
+            chatflowConfig: {
+                /* Chatflow Config */
             },
-            tooltip: {
-                showTooltip: true,
-                tooltipMessage: 'Hi There 👋!',
-                tooltipBackgroundColor: 'black',
-                tooltipTextColor: 'white',
-                tooltipFontSize: 16
+            observersConfig: {
+                /* Observers Config */
             },
-            disclaimer: {
-                title: 'Disclaimer',
-                message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
-                textColor: 'black',
-                buttonColor: '#3b82f6',
-                buttonText: 'Start Chatting',
-                buttonTextColor: 'white',
-                blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
-                backgroundColor: 'white'
-            },
-            customCSS: ``,
-            chatWindow: {
-                showTitle: true,
-                showAgentMessages: true,
-                title: 'Flowise Bot',
-                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                welcomeMessage: 'Hello! This is custom welcome message',
-                errorMessage: 'This is a custom error message',
-                backgroundColor: '#ffffff',
-                backgroundImage: 'enter image path or link',
-                height: 700,
-                width: 400,
-                fontSize: 16,
-                starterPrompts: [
-                    "What is a bot?",
-                    "Who are you?"
-                ],
-                starterPromptFontSize: 15,
-                clearChatOnReload: false,
-                sourceDocsTitle: 'Sources:',
-                renderHTML: true,
-                botMessage: {
-                    backgroundColor: '#f7f8ff',
-                    textColor: '#303235',
-                    showAvatar: true,
-                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
-                },
-                userMessage: {
+            theme: {
+                button: {
                     backgroundColor: '#3B81F6',
-                    textColor: '#ffffff',
-                    showAvatar: true,
-                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                    right: 20,
+                    bottom: 20,
+                    size: 48,
+                    dragAndDrop: true,
+                    iconColor: 'white',
+                    customIconSrc: 'logo.jpg',
+                    autoWindowOpen: {
+                        autoOpen: true,
+                        openDelay: 2,
+                        autoOpenOnMobile: false
+                    }
                 },
-                textInput: {
-                    placeholder: 'Type your question',
+                tooltip: {
+                    showTooltip: false,
+                    tooltipMessage: 'Hi There 👋!',
+                    tooltipBackgroundColor: 'black',
+                    tooltipTextColor: 'white',
+                    tooltipFontSize: 16
+                },
+                disclaimer: {
+                    title: 'Disclaimer',
+                    message: "By using this chatbot, you agree to our Terms & Conditions",
+                    textColor: 'black',
+                    buttonColor: '#3b82f6',
+                    buttonText: 'Start Chatting',
+                    buttonTextColor: 'white',
+                    blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
+                    backgroundColor: 'white'
+                },
+                customCSS: ``,
+                chatWindow: {
+                    showTitle: true,
+                    showAgentMessages: true,
+                    title: 'AI ChatBot',
+                    titleAvatarSrc: 'logo.jpg',
+                    welcomeMessage: 'Hello! How can I help you today?',
+                    errorMessage: 'Sorry, something went wrong. Please try again.',
                     backgroundColor: '#ffffff',
-                    textColor: '#303235',
-                    sendButtonColor: '#3B81F6',
-                    maxChars: 50,
-                    maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
-                    autoFocus: true,
-                    sendMessageSound: true,
-                    sendSoundLocation: 'send_message.mp3',
-                    receiveMessageSound: true,
-                    receiveSoundLocation: 'receive_message.mp3'
-                },
-                feedback: {
-                    color: '#303235'
-                },
-                dateTimeToggle: {
-                    date: true,
-                    time: true
-                },
-                footer: {
-                    textColor: '#303235',
-                    text: 'Powered by',
-                    company: 'Flowise',
-                    companyLink: 'https://flowiseai.com'
+                    backgroundImage: '',
+                    height: 700,
+                    width: 600,
+                    fontSize: 16,
+                    starterPrompts: [
+                        "What services does GET Group offer?",
+                        "Who is GET Group?",
+                        "Tell me about GET Group's Identity Management solutions",
+                        "What industries does GET Group serve?"
+                    ],
+                    starterPromptFontSize: 15,
+                    clearChatOnReload: false,
+                    sourceDocsTitle: 'Sources:',
+                    renderHTML: true,
+                    botMessage: {
+                        backgroundColor: '#f7f8ff',
+                        textColor: '#303235',
+                        showAvatar: true,
+                        avatarSrc: 'logo.jpg'
+                    },
+                    userMessage: {
+                        backgroundColor: '#3B81F6',
+                        textColor: '#ffffff',
+                        showAvatar: true,
+                        avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                    },
+                    textInput: {
+                        placeholder: 'Type your question',
+                        backgroundColor: '#ffffff',
+                        textColor: '#303235',
+                        sendButtonColor: '#3B81F6',
+                        maxChars: 200,
+                        maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 200 characters.',
+                        autoFocus: true,
+                        sendMessageSound: true,
+                        sendSoundLocation: 'send_message.mp3',
+                        receiveMessageSound: true,
+                        receiveSoundLocation: 'receive_message.mp3'
+                    },
+                    feedback: {
+                        color: '#303235'
+                    },
+                    dateTimeToggle: {
+                        date: true,
+                        time: true
+                    },
+                    footer: {
+                        textColor: '#303235',
+                        text: '',
+                        company: '',
+                        companyLink: ''
+                    }
                 }
             }
-        }
-    })
-</script>
+        })
+    </script>
 </body>
+
 </html>
