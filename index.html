@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flowise Chatbot Embed</title>
+</head>
+<body>
+  <h1>Welcome to My Flowise Chatbot Page</h1>
+  <p>This page includes an embedded Flowise chatbot.</p>
+
+  <!-- Flowise Embed Script -->
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+      chatflowid: "54331d31-13be-4648-83b2-4f2825104a90",
+      apiHost: "https://flowise-0okh.onrender.com"
+    })
+  </script>
+</body>
+</html>
